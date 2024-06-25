@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col">
+		<p>
+			Basic event button (watch the console):
+			<button
+				class="btn btn-sm btn-primary"
+				(click)="handleClick()"
+			>
+				Click me
+			</button>
+		</p>
+		<p>
+			Capture event metadata with $event:
+			<button
+				class="btn btn-sm btn-info"
+				(click)="showEvent($event)"
+			>
+				Event data
+			</button>
+		</p>
+		<p>
+			Using an event to change a bound value:
+			<br />
+			<button
+				class="btn btn-sm btn-outline-primary"
+				(click)="changeColor('blue')"
+			>
+				Blue
+			</button>
+			&nbsp;
+			<button
+				class="btn btn-sm btn-outline-danger"
+				(click)="changeColor('red')"
+			>
+				Red
+			</button>
+			&nbsp;
+			<button
+				class="btn btn-sm btn-outline-success"
+				(click)="changeColor('green')"
+			>
+				Green
+			</button>
+			<br />
+			My favorite color is
+			<span [style.background-color]="favoriteColor">{{ favoriteColor }}</span>
+		</p>
+	</div>
+</div>

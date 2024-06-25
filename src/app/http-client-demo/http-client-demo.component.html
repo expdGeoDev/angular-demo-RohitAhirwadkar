@@ -1,0 +1,11 @@
+<div>
+	<h3>Http Client</h3>
+	<div class="row">
+		<div class="col">
+			<p>Using *ngFor</p>
+			<ul>
+				<li *ngFor="let bean of beans$ | async as beans">{{ bean.brand }}</li>
+			</ul>
+		</div>
+	</div>
+</div>

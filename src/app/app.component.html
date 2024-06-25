@@ -1,0 +1,25 @@
+<main class="container-fluid">
+	<header class="row">
+		<div class="col">
+			<h1>Angular Demos</h1>
+			<hr />
+		</div>
+	</header>
+	<div class="row">
+		<div class="col-3">
+			<ul class="list-unstyled">
+				<li *ngFor="let route of routerStates">
+					<a
+						[uiSref]="route.name"
+						uiSrefActive="active"
+					>
+						{{ route.label }}
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="col">
+			<ui-view></ui-view>
+		</div>
+	</div>
+</main>

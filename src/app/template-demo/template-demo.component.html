@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col">
+		<p>Calculate a value: 2 + 2 = {{ 2 + 2 }}</p>
+		<p>Display a variable: {{ displayVariable }}</p>
+		<p>Interpolated values are always strings!</p>
+		<p>
+			Use variable interpolation to set an
+			<mark title="{{ titleText }}">attribute value</mark>
+			<br />
+			(Hover to see the text)
+		</p>
+		<p>
+			Bind to an
+			<mark [title]="titleText">element property</mark>
+			if the value can be something other than a string
+		</p>
+		<p>
+			Bind to a
+			<span [style.background-color]="bgColor">style property</span>
+			or just use an entire
+			<span [style]="styleObject">style object.</span>
+		</p>
+		<p>
+			Use a class if an expression is
+			<span [class.underline]="showUnderline">true</span>
+			or just have an expression return a
+			<span [class]="cssClassArray">set of classes.</span>
+		</p>
+	</div>
+</div>

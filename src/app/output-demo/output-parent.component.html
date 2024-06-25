@@ -1,0 +1,9 @@
+<div>
+	<h3>Parent component</h3>
+	@if (messageFromChild) {
+		<p>Message from the child component: {{ messageFromChild }}</p>
+	} @else {
+		<p>No message received yet</p>
+	}
+	<app-output-child (messageSent)="handleMessageSent($event)"></app-output-child>
+</div>

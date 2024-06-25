@@ -1,0 +1,19 @@
+<div>
+	<h3>Iterating over data</h3>
+	<div class="row">
+		<div class="col">
+			<p>Using *ngFor</p>
+			<ul>
+				<li *ngFor="let bean of beans">{{ bean.brand }}</li>
+			</ul>
+		</div>
+		<div class="col">
+			<p>Using &#64;for</p>
+			<ul>
+				@for (bean of beans; track bean.id) {
+					<li>{{ bean.brand }}</li>
+				}
+			</ul>
+		</div>
+	</div>
+</div>
