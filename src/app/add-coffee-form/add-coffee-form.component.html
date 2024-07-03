@@ -1,1 +1,79 @@
-<p>add-coffee-form works!</p>
+<div class="w-50 p-5 mx-auto">
+	<form [formGroup]="coffeeForm" (ngSubmit)="onSubmit()">
+		<h1 class="text-center">New Coffee</h1>
+
+		<!-- Coffee Brand -->
+		<div class="form-group p-3">
+			<label id="coffeeBrand">Coffee Brand*:</label>
+			<input type="text" class="form-control d-block" id="brand" formControlName="brand"
+						 aria-describedby="coffeeBrandHelp" placeholder="Enter Coffee Brand" />
+			<div *ngIf="brand?.invalid && (brand?.dirty || brand?.touched)" class="invalid-feedback d-block">Brand is Required
+			</div>
+			<div class="valid-feedback d-block" *ngIf="brand?.valid && (brand?.dirty|| brand?.touched)">This field is valid
+			</div>
+		</div>
+
+		<!-- Coffee Type -->
+		<div class="form-group p-3">
+			<label id="groundOrBeans">Coffee Type: </label>
+			<div></div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" formControlName="groundOrBeans" id="coffeeGround" value="Ground"
+							 checked />
+				<label class="form-check-label" for="coffeeGround">
+					Ground
+				</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" formControlName="groundOrBeans" id="coffeeBean" value="Bean" />
+				<label class="form-check-label" for="coffeeBean">
+					Bean
+				</label>
+			</div>
+		</div>
+
+		<!-- Roast Type -->
+		<div class="form-group p-3">
+			<label for="roast">Select Roast Type:</label>
+			<select class="form-control" id="roast" formControlName="roast">
+				<option value="Select Rost" selected></option>
+				<option value="Light" selected>Light</option>
+				<option value="Medium">Medium</option>
+				<option value="Dark">Dark</option>
+			</select>
+		</div>
+
+		<!-- Single Origin -->
+		<div class="form-group p-3">
+			<label class="form-check-label" for="singleOriginSwitch">Single Origin: <span>{{
+					getSingleOrigin(coffeeForm.get('singleOrigin')?.value)
+				}}</span></label>
+			<div class="form-check form-switch ">
+				<input class="form-check-input" type="checkbox" id="singleOriginSwitch" formControlName="singleOrigin" />
+			</div>
+		</div>
+
+		<!-- Grind Level -->
+		<div class="form-group p-3">
+			<label for="grindRange">Grind Level: <span>{{
+					getGrindLevel(coffeeForm.get('grindLevel')?.value)
+				}}</span></label>
+			<input type="range" class="form-range" min="1" max="3" step="1" id="grindRange" value="1"
+						 formControlName="grindLevel" />
+		</div>
+
+		<!-- Flavor Notes -->
+		<div class="form-group p-3">
+			<label for="flavorNotes">Flavor Notes:</label>
+			<textarea class="form-control" id="flavorNotes" rows="3" formControlName="flavorNotes"
+								placeholder="Enter flavor notes..."></textarea>
+		</div>
+
+		<!-- Buttons -->
+		<div class="form-group p-3 float-end">
+			<button type="reset" class="btn btn-danger btn-md me-2" (click)="clearForm()">Reset</button>
+			<button type="submit" class="btn btn-primary btn-md">Submit</button>
+		</div>
+	</form>
+
+</div>

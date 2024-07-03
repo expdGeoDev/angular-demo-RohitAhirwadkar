@@ -13,4 +13,8 @@ export class CoffeeHttpService {
 	getAllBeans(): Observable<Coffee[]> {
 		return this.client.get<Coffee[]>(`${this.baseUrl}/coffee`);
 	}
+
+	submitCoffee(formData: any): Observable<any> {
+		return this.client.post<Coffee[]>(`${this.baseUrl}/coffee`, formData);
+	}
 }

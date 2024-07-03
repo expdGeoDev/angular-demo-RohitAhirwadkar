@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-		"rest-server": "json-server --watch src/data/coffee-data.json --port 8000"
+    "rest-server": "json-server --watch src/data/coffee-data.json --port 8000"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "lodash-es": "^4.17.21",
+    "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
